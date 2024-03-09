@@ -50,12 +50,16 @@ class OfferListFragment : Fragment() {
                         /**
                          * implement sorting by price
                          */
+                        val sortedList = adapter.items.sortedBy { it.price }
+                        adapter.setItems(sortedList)
                     }
 
                     R.id.sort_by_duration -> {
                         /**
                          * implement sorting by duration
                          */
+                        val sortedList = adapter.items.sortedBy { it.flight.duration }
+                        adapter.setItems(sortedList)
                     }
                 }
             }

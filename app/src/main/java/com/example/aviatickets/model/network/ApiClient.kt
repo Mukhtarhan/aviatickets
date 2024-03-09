@@ -1,16 +1,14 @@
 package com.example.aviatickets.model.network
 
+import com.example.aviatickets.model.service.TicketsApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-
     private val retrofit = Retrofit.Builder()
-        .baseUrl("YOUR_BASE_URL")
+        .baseUrl("https://my-json-server.typicode.com/estharossa/fake-api-demo/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    /**
-     * think about performing network request
-     */
+    val aviaTicketsApi: TicketsApiService = retrofit.create(TicketsApiService::class.java)
 }
